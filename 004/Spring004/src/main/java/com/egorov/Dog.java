@@ -1,7 +1,11 @@
 package com.egorov;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+@Component
+@Scope()
 public class Dog implements Pet {
-   private String name;
+    private String name;
 
     public String getName() {
         return name;
@@ -20,11 +24,11 @@ public class Dog implements Pet {
     public void say() {
         System.out.println("Woof!!!");
     }
-
+@PostConstract
     public void init() {
         System.out.println("Class Dog: init method");
     }
-
+@PreDestroy
     public void destroy() {
         System.out.println("Class Dog: destroy method");
     }
